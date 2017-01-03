@@ -1,0 +1,83 @@
+package ChatAdminAndUser.Hibernate;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
+
+import org.hibernate.SessionFactory;
+
+import ChatAdminAndUser.Hibernate.entity.BadUser;
+import ChatAdminAndUser.Hibernate.entity.Permission;
+import ChatAdminAndUser.Hibernate.entity.Role;
+import ChatAdminAndUser.Hibernate.entity.User;
+
+public class App {
+    public static void main( String[] args ) {
+    		SessionFactory sessionFactory = (SessionFactory) Persistence.createEntityManagerFactory("initentitymanager");
+    		EntityManager entityManager = sessionFactory.createEntityManager();
+    		entityManager.getTransaction().begin();
+    		
+            Role memberRole = new Role();
+            memberRole.setName("member");
+
+            Role adminRole = new Role();
+            adminRole.setName("admin");
+
+            Permission readPermission = new Permission();
+            readPermission.setName("read");
+
+            Permission writePermission = new Permission();
+            writePermission.setName("write");
+
+            Permission banPermission = new Permission();
+            banPermission.setName("ban");
+
+            Permission deletePermission = new Permission();
+            deletePermission.setName("delete");
+
+            List<Permission> memberPermissions = new ArrayList<Permission>();
+            memberPermissions.add(readPermission);
+            memberPermissions.add(writePermission);
+
+            List<Permission> adminPermissions = new ArrayList<Permission>();
+            adminPermissions.add(readPermission);
+            adminPermissions.add(writePermission);
+            adminPermissions.add(banPermission);
+            adminPermissions.add(deletePermission);
+
+            memberRole.setPermissions(memberPermissions);
+            adminRole.setPermissions(adminPermissions);
+
+            User user = new User();
+            user.setName("John");
+            user.setLogin("john");
+            user.setPassword("123");
+            user.setRole(adminRole);
+
+            BadUser badUser = new BadUser();
+            badUser.setName("Bad");
+            badUser.setLogin("bad");
+            badUser.setPassword("123");
+            badUser.setDebt("123");
+            badUser.setRole(adminRole);
+
+            entityManager.persist(readPermission);
+            entityManager.persist(writePermission);
+            entityManager.persist(banPermission);
+            entityManager.persist(deletePermission);
+
+            entityManager.persist(memberRole);
+            entityManager.persist(adminRole);
+
+            entityManager.persist(user);
+            entityManager.persist(badUser);
+
+
+            entityManager.getTransaction().commit();
+
+            entityManager.close();
+            sessionFactory.close();
+    }
+}
