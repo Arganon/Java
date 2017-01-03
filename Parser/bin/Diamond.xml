@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<diamonds>
+	<diamond id="d001">
+		<name>Pray of Valinore</name>
+		<type>precious</type>
+		<place>Valinore</place>
+		<properties>
+			<colour>White</colour>
+			<transparency>Clear</transparency>
+			<karats>120</karats>
+		</properties>
+	</diamond>
+	<diamond id="d002">
+		<name>Eagle Eye</name>
+		<type>precious</type>
+		<place>Izengard</place>
+		<properties>
+			<colour>Blue</colour>
+			<transparency>Clear</transparency>
+			<karats>142</karats>
+		</properties>
+	</diamond>
+</diamonds>
