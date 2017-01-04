@@ -28,7 +28,7 @@ public class Printer {
 	private String printingType;
 	
 	@Column(name = "price")
-	private String price;
+	private float price;
 
 	//need connect with Product table
 	private String maker;
@@ -92,11 +92,11 @@ public class Printer {
 		this.printingType = printingType;
 	}
 
-	public String getPrice() {
+	public float getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(float price) {
 		this.price = price;
 	}
 }

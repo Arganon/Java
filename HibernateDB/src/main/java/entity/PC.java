@@ -22,19 +22,19 @@ public class PC {
 	private String model;
 	
 	@Column(name = "speed")
-	private String speed;
+	private float speed;
 	
 	@Column(name = "ram")
-	private String ram;
+	private int ram;
 	
 	@Column(name = "hd")
-	private String hd;
+	private float hd;
 	
 	@Column(name = "cd")
-	private String cd;
+	private int cd;
 	
 	@Column(name = "price")
-	private String price;
+	private float price;
 	
 	//need connect with Product table
 	private String maker;
@@ -82,43 +82,43 @@ public class PC {
 		this.model = model;
 	}
 
-	public String getSpeed() {
+	public float getSpeed() {
 		return speed;
 	}
 
-	public void setSpeed(String speed) {
+	public void setSpeed(float speed) {
 		this.speed = speed;
 	}
 
-	public String getRam() {
+	public int getRam() {
 		return ram;
 	}
 
-	public void setRam(String ram) {
+	public void setRam(int ram) {
 		this.ram = ram;
 	}
 
-	public String getHd() {
+	public float getHd() {
 		return hd;
 	}
 
-	public void setHd(String hd) {
+	public void setHd(float hd) {
 		this.hd = hd;
 	}
 
-	public String getCd() {
+	public int getCd() {
 		return cd;
 	}
 
-	public void setCd(String cd) {
+	public void setCd(int cd) {
 		this.cd = cd;
 	}
 
-	public String getPrice() {
+	public float getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(float price) {
 		this.price = price;
 	}
 }
