@@ -25,10 +25,32 @@ public class Printer {
 	private String color;
 	
 	@Column(name = "type")
-	private String type;
+	private String printingType;
 	
 	@Column(name = "price")
 	private String price;
+
+	//need connect with Product table
+	private String maker;
+	
+	//need connect with Product table
+	private String type = "printer";
+
+	public String getMaker() {
+		return maker;
+	}
+
+	public void setMaker(String maker) {
+		this.maker = maker;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -62,12 +84,12 @@ public class Printer {
 		this.color = color;
 	}
 
-	public String getType() {
-		return type;
+	public String getPrintingType() {
+		return printingType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setPrintingType(String printingType) {
+		this.printingType = printingType;
 	}
 
 	public String getPrice() {
