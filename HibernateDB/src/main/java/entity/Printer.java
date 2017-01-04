@@ -8,21 +8,27 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "product")
-public class Product {
-
+@Table(name = "printer")
+public class Printer {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "maker")
-	private String maker;
+	@Column(name = "code")
+	private String code;
 	
 	@Column(name = "model")
 	private String model;
 	
+	@Column(name = "color")
+	private String color;
+	
 	@Column(name = "type")
 	private String type;
+	
+	@Column(name = "price")
+	private String price;
 
 	public Long getId() {
 		return id;
@@ -32,12 +38,12 @@ public class Product {
 		this.id = id;
 	}
 
-	public String getMaker() {
-		return maker;
+	public String getCode() {
+		return code;
 	}
 
-	public void setMaker(String maker) {
-		this.maker = maker;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getModel() {
@@ -48,11 +54,27 @@ public class Product {
 		this.model = model;
 	}
 
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	public String getType() {
 		return type;
 	}
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
 	}
 }
