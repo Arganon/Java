@@ -1,64 +1,63 @@
 package builders;
 
-import entity.PC;
+import entity.Laptop;
 
-public class PCBuilder {
+public class LaptopBuilder {
 	private String maker;
 	private String code;
 	private String model;
 	private float speed;
 	private int ram;
 	private float hd;
-	private int cd;
+	private float screen;
 	private float price;
-	private PC pc;
+	private Laptop laptop;
 	
-	public PCBuilder(String maker, String code, String model, float speed, int ram, float hd,
-			int cd, float price) {
-		this.pc = new PC();
+	public LaptopBuilder(String maker, String code, String model, float speed, int ram, float hd, float screen,
+			float price) {
+		this.laptop = new Laptop();
 		this.maker = maker;
 		this.code = code;
 		this.model = model;
 		this.speed = speed;
 		this.ram = ram;
 		this.hd = hd;
-		this.cd = cd;
+		this.screen = screen;
 		this.price = price;
 	}
-	
 	public void setMaker() {
-		pc.setMaker(maker);
+		laptop.setMaker(maker);
 	}
 	
 	public void setCode() {
-		pc.setCode(code);
+		laptop.setCode(code);
 	}
 	
 	public void setModel() {
-		pc.setModel(model);
+		laptop.setModel(model);
 	}
 	
 	public void setSpeed() {
-		pc.setSpeed(speed);
+		laptop.setSpeed(speed);
 	}
 	
 	public void setRam() {
-		pc.setRam(ram);
+		laptop.setRam(ram);
 	}
 	
 	public void setHd() {
-		pc.setHd(hd);
+		laptop.setHd(hd);
 	}
 	
-	public void setCd() {
-		pc.setCd(cd);
+	public void setScreen() {
+		laptop.setScreen(screen);
 	}
 	
 	public void setPrice() {
-		pc.setPrice(price);
+		laptop.setPrice(price);
 	}
 	
 	public void setType() {
-		pc.setType();
+		laptop.setType();
 	}
 }

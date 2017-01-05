@@ -1,10 +1,13 @@
 package entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,17 +33,19 @@ public class Printer {
 	@Column(name = "price")
 	private float price;
 
-	//need connect with Product table
 	private String maker;
 	
-	//need connect with Product table
 	private String type = "printer";
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Product product;
 
 	public String getMaker() {
 		return maker;
 	}
 
 	public void setMaker(String maker) {
+		product.setMaker(maker);
 		this.maker = maker;
 	}
 
@@ -48,8 +53,8 @@ public class Printer {
 		return type;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setType() {
+		product.setType(type);
 	}
 
 	public Long getId() {
@@ -73,6 +78,7 @@ public class Printer {
 	}
 
 	public void setModel(String model) {
+		product.setModel(model);
 		this.model = model;
 	}
 
