@@ -1,10 +1,16 @@
 package entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +29,34 @@ public class Product {
 	
 	@Column(name = "type")
 	private String type;
+	
+	@OneToMany(orphanRemoval = true, mappedBy = "product", cascade = CascadeType.ALL)
+	private Set<Unit> tests;
+	
+	
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+//	private Set<Printer> printers;
+	
+//	public Set<Printer> getPrinters() {
+//		return printers;
+//	}
+//
+//	public void setPrinters(Set<Printer> printers) {
+//		this.printers = printers;
+//	}
+//
+	public Set<Unit> getTests() {
+		return tests;
+	}
+
+	public void setTests(Set<Unit> tests) {
+		this.tests = tests;
+		for(Unit t : tests) {
+			setMaker(t.getMaker());
+			setModel(t.getModel());
+			setType(t.getType());
+		}
+	}
 
 	public Long getId() {
 		return id;
