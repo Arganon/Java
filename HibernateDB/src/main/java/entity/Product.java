@@ -33,18 +33,7 @@ public class Product {
 	@OneToMany(orphanRemoval = true, mappedBy = "product", cascade = CascadeType.ALL)
 	private Set<Unit> tests;
 	
-	
-//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-//	private Set<Printer> printers;
-	
-//	public Set<Printer> getPrinters() {
-//		return printers;
-//	}
-//
-//	public void setPrinters(Set<Printer> printers) {
-//		this.printers = printers;
-//	}
-//
+
 	public Set<Unit> getTests() {
 		return tests;
 	}

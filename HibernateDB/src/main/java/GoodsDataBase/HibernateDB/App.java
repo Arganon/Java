@@ -1,6 +1,6 @@
 package GoodsDataBase.HibernateDB;
 
-//import entity.Printer;
+import entity.Printer;
 import entity.Test;
 import entity.Unit;
 import entity.Product;
@@ -20,18 +20,17 @@ public class App {
 		entityManager.getTransaction().begin();
 		
 		Product product = new Product();
-		Unit test = new Test("samsung", "y555x", "printer", "Test");
-	
-//		TestBuilder tb = new TestBuilder(test, "samsung", "y555x", "printer");
-//		Director director = new Director();
-
-//		director.build(tb);
+		Unit test = new Test("samsung", "y555x", "Test", "Test");
+		Unit printer = new Printer("HP", "hp444", "printer", "color", "c123", "laser", 200);
+		
 		
 		Set<Unit> tests = new HashSet<>();
 		tests.add(test);
+		tests.add(printer);
 		product.setTests(tests);
 		
 		entityManager.persist(test);
+		entityManager.persist(printer);
 		entityManager.persist(product);
 
 		entityManager.getTransaction().commit();
