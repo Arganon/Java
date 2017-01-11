@@ -1,0 +1,89 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Produser extends Thread {
+ Queue<String> q;
+ Object writerLock;
+ Object readerLock;
+ String name;
+ 
+ public Produser(Queue<String> q, Object writerLock, Object readerLock,
+   String name) {
+  this.q = q;
+  this.writerLock = writerLock;
+  this.readerLock = readerLock;
+  this.name = name;
+ }
+ 
+ @Override
+ public void run() {
+  while(true) {
+   synchronized(writerLock) {
+    while(q.size() >= 5) {
+     try {
+      writerLock.wait();
+     } catch (InterruptedException e) {
+      e.printStackTrace();
+     }
+    }
+    q.add("Element");
+
+    System.out.println("Produser " + name + " put the Element. " + q.peek());
+   }
+    synchronized(readerLock) {
+     readerLock.notify();
+    }
+  }
+ }
+}
+
+class Consummer extends Thread {
+ Queue<String> q;
+ Object writerLock;
+ Object readerLock;
+ String name;
+ 
+ public Consummer(Queue<String> q, Object writerLock, Object readerLock,
+   String name) {
+  this.q = q;
+  this.writerLock = writerLock;
+  this.readerLock = readerLock;
+  this.name = name;
+ }
+ 
+ @Override
+ public void run() {
+  while(true) {
+	  synchronized(readerLock) {
+		  while(!q.isEmpty()&& q.peek() != null) {
+			  System.out.println("Consummer " + name + " get the Element. " + q.peek());
+			  q.poll();
+		  }
+		  try {
+			  synchronized(writerLock) {
+				  writerLock.notify();
+			  }
+			readerLock.wait();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	  }
+  }
+ }
+}
+
+
+public class RWL {
+	public static void main(String[] args) throws InterruptedException {
+		Queue<String> q = new LinkedList<>();
+		Object writerLock = new Object();
+		Object readerLock = new Object();
+		
+		Produser prod = new Produser(q, writerLock, readerLock, "Prod");
+		Consummer cons = new Consummer(q, writerLock, readerLock, "Cons");
+		
+		cons.start();
+		prod.start();
+		cons.join();
+	}
+}
