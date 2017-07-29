@@ -155,5 +155,6 @@ public class SkipListTest_v02 {
 		list.add(76);
 		list.add(50);
 		list.show();
+		//
 	}
 }
