@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="HM_0062_MVC_WEB_NOTEBOOK">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="HM_0062_MVC_WEB_NOTEBOOK"/>
+        <property name="java-output-path" value="/HM_0062_MVC_WEB_NOTEBOOK/build/classes"/>
+    </wb-module>
+</project-modules>
