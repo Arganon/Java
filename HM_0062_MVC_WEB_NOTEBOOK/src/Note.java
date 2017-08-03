@@ -3,30 +3,16 @@
 import java.util.Date;
 
 public class Note {
-	String firstName;
-	String name;
-	String secondName;
-	String fullName;
-	String nickname;
+	String name, firstName, secondName, fullName, nickname;
 	String comment;
 	// place for enum group (ADMIN, USER and etc.) not finished!
-	String telephoneHome;
-	String telephoneMobile;
-	String telephoneMobileSecond;
-	String email;
-	String skype;
-	String addressIndex;
-	String city;
-	String street;
-	String buildingNumber;
-	String flatNumber;
-	String fullAddress;
-	String dateCreate;
-	String lastChanges;
+	String telephoneHome, telephoneMobile, telephoneMobileSecond;
+	String email, skype;
+	String addressIndex, city, street, buildingNumber, flatNumber, fullAddress;
+	String dateCreate, lastChanges;
 
 	public Note() {
 		setDateCreate(new Date());
-
 	}
 
 	// ------------------------------------------------Setters
