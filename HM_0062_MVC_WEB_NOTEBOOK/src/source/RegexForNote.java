@@ -1,4 +1,4 @@
-
+package source;
 
 public class RegexForNote {
 	public static final String REGEX_FOR_FULL_NAME = "^([A-Z][a-z]+[\\-\\s]?)+$";

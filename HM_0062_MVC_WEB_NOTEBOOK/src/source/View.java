@@ -1,4 +1,6 @@
+package source;
 
+import entity.Note;
 
 public class View {
 	public static final String INPUT_NAME = "Please, enter your name.";

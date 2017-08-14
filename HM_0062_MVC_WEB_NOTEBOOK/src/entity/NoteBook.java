@@ -1,9 +1,14 @@
-
+package entity;
 
 import java.util.Vector;
 
-public class NoteBook {
+public class NoteBook implements NoteMaker {
 	private Vector<Note> notes;
+	
+	@Override
+	public Note makeNote() {
+		return new Note();
+	}
 
 	public NoteBook() {
 		this.notes = new Vector<Note>();

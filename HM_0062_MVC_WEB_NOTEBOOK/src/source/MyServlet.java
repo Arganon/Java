@@ -1,3 +1,4 @@
+package source;
 
 
 import java.io.IOException;
@@ -8,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import entity.NoteBook;
 
 @WebServlet("/MyServlet")
 public class MyServlet extends HttpServlet {
@@ -23,7 +26,7 @@ public class MyServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.controller.makeNewNote();
+		this.noteBook.makeNote();
 		this.controller.fillNote(request.getParameter("surname"), "surname");
 		this.controller.fillNote(request.getParameter("name"), "name");
 		this.controller.fillNote(request.getParameter("secondname"), "secondname");

@@ -1,4 +1,6 @@
-
+package source;
+import entity.Note;
+import entity.NoteBook;
 
 public class Controller {
 	View view;
