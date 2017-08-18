@@ -21,9 +21,9 @@ public class Main {
 		tss.selectTransparency(Transparency.TRANSPARENT);
 		
 		
-		PriceSelectionStrategy strategy = new PriceSelectionStrategy();
-		sc.setStrategy(strategy);
-		sc.executeStrategy(necklace);
+//		PriceSelectionStrategy strategy = new PriceSelectionStrategy();
+//		sc.setStrategy(strategy);
+//		sc.executeStrategy(necklace);
 		
 		sc.setStrategy(tss);
 		sc.executeStrategy(necklace);
