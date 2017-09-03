@@ -3,7 +3,7 @@ package hw.stones.enums;
 import hw.stones.interfaces.MaterialProperties;
 
 public enum MaterialTypePreciousStones implements MaterialProperties {
-	DIAMOND,
+	BRILLIANT,
 	EMERALD,
 	RUBY,
 	SAPPHIRE;

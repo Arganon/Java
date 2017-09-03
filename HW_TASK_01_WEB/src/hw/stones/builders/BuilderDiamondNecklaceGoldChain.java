@@ -20,7 +20,7 @@ public class BuilderDiamondNecklaceGoldChain extends NecklaceBuilder implements 
 				ProbeMetric.M585));
 	}
 	
-	public void setStone() {
+	public void setStones() {
 		makePreciousStone();
 		makeSemiPreciousStone();
 	}
@@ -28,11 +28,11 @@ public class BuilderDiamondNecklaceGoldChain extends NecklaceBuilder implements 
 	@Override
 	public void makePreciousStone() {
 		necklace.addStone(new Precious(4, 150, Color.BLUE, Transparency.TRANSPARENT, 
-				MaterialTypePreciousStones.DIAMOND, Сlarity.FL, Cut.ROUND));
+				MaterialTypePreciousStones.BRILLIANT, Сlarity.FL, Cut.ROUND));
 		necklace.addStone(new Precious(5, 150, Color.BLUE, Transparency.TRANSPARENT, 
-				MaterialTypePreciousStones.DIAMOND, Сlarity.FL, Cut.BAGUETTE));
+				MaterialTypePreciousStones.BRILLIANT, Сlarity.FL, Cut.BAGUETTE));
 		necklace.addStone(new Precious(4, 150, Color.BLUE, Transparency.TRANSPARENT, 
-				MaterialTypePreciousStones.DIAMOND, Сlarity.FL, Cut.ROUND));
+				MaterialTypePreciousStones.BRILLIANT, Сlarity.FL, Cut.ROUND));
 		necklace.addStone(new Precious(2, 70, Color.RED, Transparency.TRANSPARENT, 
 				MaterialTypePreciousStones.RUBY, Сlarity.FL, Cut.ROUND));
 		necklace.addStone(new Precious(2, 70, Color.RED, Transparency.TRANSPARENT, 

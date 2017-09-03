@@ -9,7 +9,7 @@ public abstract class NecklaceBuilder {
 		this.necklace = new Necklace();
 	}
 	abstract void makeChain();
-	abstract void setStone();
+	abstract void setStones();
 	Necklace getNecklace() {
 		return necklace;
 	}

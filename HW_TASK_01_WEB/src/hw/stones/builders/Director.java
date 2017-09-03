@@ -18,7 +18,7 @@ public class Director {
 	public Necklace build() {
 		builder.createNecklace();
 		builder.makeChain();
-		builder.setStone();
+		builder.setStones();
 		return builder.getNecklace();
 	}
 }
